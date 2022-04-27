@@ -5,7 +5,9 @@
   box-sizing: border-box;
 }
 :root{
-  --hero: #EE5B2B;
-  --unique: #F35A41;
+  --nav: #3D5974;
   --white: #FFFFFF;
+  --black: #000000;
+  --card: #1087FA;
+  --secondary: #EEF5FB;
 }

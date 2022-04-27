@@ -1,55 +1,28 @@
 .app__hero{
     font-family: poppins;
+    margin-bottom: 14vh;
 }
-.brand{
+.navbar{
+    margin-bottom: 4vh;
+}
+.navbar-brand{
     font-weight: bolder;
-    color: var(--hero);
-    margin-left: 4vh;
+    color: var(--nav);
+    font-size: 40px;
 }
-.right{
-    background: var(--hero);
-    height: 100vh;
-}
-.left{
-    background: var(--white);
-    height: 100vh;
-    padding-left: 2vh;
-    padding-right: 2vh;
-}
-.btn:nth-child(1){
-    background-color: transparent;
-    border: 2px solid var(--hero);
-    font-weight: bold;
-    color: var(--hero);
-}
-.btn:nth-child(1):hover{
-    background: var(--hero);
-    color: var(--white);
-    transition: 1s;
-}
-.btn:last-child{
-    background-color: var(--hero);
-    color: var(--white);
-    font-weight: bold;
-}
-.btn:last-child:hover{
-    background: var(--white);
-    border: 2px solid var(--hero);
-    color: var(--hero);
-    transition: 1s;
-}
-.car{
-    margin-top: 20vh;
-    width: 140vh;
-    margin-left: -40vh;
+.nav-link{
+    color: #3D5974;
 }
 .intro{
+    font-size: 34px;
     margin-top: 14vh;
     margin-left: 4vh;
     font-weight: bold;
 }
 .text{
     margin-left: 4vh;
-    font-family: Nunito;
     font-weight: 100;
+}
+.right{
+    margin-right: 10vh;
 }

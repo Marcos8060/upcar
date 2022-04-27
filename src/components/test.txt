@@ -1,0 +1,14 @@
+<div className='col-md-3'>
+                 <div className="d-flex align-tems-center justify-content-between">
+                     <div>
+                       <h1 className='brand'>Range</h1>
+                     </div>
+                     <div>
+                        <a className='m-3 text-decoration-none btn' href="/register">Sign Up</a>
+                        <a className='text-decoration-none btn' href="/login">Login</a>
+                     </div>
+                 </div>
+                 <h2 className='intro'>Hire the best cars in <br /> town at friendly prices.</h2>
+                 <p className='text'>Dont deny yourself the pleasure of driving the best premium <br /> cars from around the world here and now.</p>
+                 <p class="text">We have patnered with the world’s leading manufacture’s <br /> and brands to create a cross border experience <br /> without having to sacrifice the comfort of city rides.</p>
+             </div>

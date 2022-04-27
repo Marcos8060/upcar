@@ -1,0 +1,8 @@
+.app__search{
+    margin-bottom: 14vh;
+}
+.search__item{
+    background: white;
+    height: 30vh;
+    border: 1px solid lightgray;
+}

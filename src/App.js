@@ -1,14 +1,16 @@
 import './App.css';
 import Hero from './components/Hero';
 import Info from './components/Info';
-import Comment from './components/Comment';
+import Footer from './components/Footer';
+import Search from './components/Search';
 
 function App() {
   return (
     <div>
       <Hero />
       <Info />
-      <Comment />
+      <Search />
+      <Footer />
     </div>
   );
 }

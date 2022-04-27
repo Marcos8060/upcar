@@ -1,5 +1,11 @@
 .app__info{
     font-family: poppins;
+    margin-bottom: 10vh;
+}
+.upper__info{
+    background: var(--secondary);
+    padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 span{
     color: var(--unique);
@@ -17,15 +23,15 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3vh;
 }
 .card:hover{
-    background: var(--unique);
+    background: var(--card);
     transition: 1s;cursor: pointer;
     color: var(--white);
 }
 .MuiSvgIcon-root{
-    color: var(--unique);
-    margin-bottom: 3vh;
+    background-color: var(--white);
 }
 .lower{
     margin-top: 14vh;
