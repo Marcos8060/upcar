@@ -1,0 +1,29 @@
+.app__info{
+    font-family: poppins;
+}
+span{
+    color: var(--unique);
+}
+.works{
+    color: var(--unique);
+    text-transform: uppercase;
+}
+.title{
+    font-weight: bold;
+}
+.card{
+    height: 40vh;
+    box-shadow: 0px 1px 14px 1px lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card:hover{
+    background: var(--unique);
+    transition: 1s;cursor: pointer;
+    color: var(--white);
+}
+.MuiSvgIcon-root{
+    color: var(--unique);
+    margin-bottom: 3vh;
+}
