@@ -32,6 +32,7 @@
     border-radius: 4px;
     box-shadow: 0px 1px 14px 1px lightgray;
     font-family: Nunito;
+    margin-bottom: 10vh;
 }
 .table{
     margin-bottom: 10vh;
@@ -42,4 +43,8 @@ th{
 .gallery__title{
     color: var(--nav);
     font-size: 24px;
+}
+.choose{
+    margin-top: 10vh;
+    margin-bottom: 14vh;
 }

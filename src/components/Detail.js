@@ -3,6 +3,10 @@ import Navbar from "./Navbar";
 import car from "../images/car1.jpg";
 import "./css/detail.css";
 import Footer from "./Footer";
+import GradeIcon from '@material-ui/icons/Grade';
+import CreditCardIcon from '@material-ui/icons/CreditCard';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import ClearIcon from '@material-ui/icons/Clear';
 
 function Detail() {
   return (
@@ -43,13 +47,35 @@ function Detail() {
                 <p className="mt-4 mb-4 gallery__title">Image Gallery</p>
                 <div className="row">
                     <div className="col-md-4">
-                        <img className="img-fluid" src={car} alt="" />
+                        <img className="img-fluid mt-3 mb-3" src={car} alt="" />
                     </div>
                     <div className="col-md-4">
-                        <img className="img-fluid" src={car} alt="" />
+                        <img className="img-fluid mt-3 mb-3" src={car} alt="" />
                     </div>
                     <div className="col-md-4">
-                        <img className="img-fluid" src={car} alt="" />
+                        <img className="img-fluid mt-3 mb-3" src={car} alt="" />
+                    </div>
+                </div>
+                <div className="row choose">
+                    <div className="col-md-6">
+                        <CreditCardIcon />
+                        <span>No prepayment required</span>
+                        <p className='desc'>Just provide us your Social Security Number and It’s all done</p>
+                    </div>
+                    <div className="col-md-6">
+                        <GradeIcon />
+                        <span>High quality cars</span>
+                        <p className='desc'>We’re available for helping you, including holiday</p>
+                    </div>
+                    <div className="col-md-6">
+                        <FavoriteBorderIcon />
+                        <span>Trustedby 10+ clients</span>
+                        <p className='desc'>We have 10k+ happy clients who love us and ready for our cars</p>
+                    </div>
+                    <div className="col-md-6">
+                        <ClearIcon />
+                        <span>Free cancelation</span>
+                        <p className='desc'>No extra fee, you can cancel your booking anytime</p>
                     </div>
                 </div>
               </div>
