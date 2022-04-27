@@ -4,6 +4,7 @@
 .brand{
     font-weight: bolder;
     color: var(--hero);
+    margin-left: 4vh;
 }
 .right{
     background: var(--hero);
@@ -36,4 +37,18 @@
     border: 2px solid var(--hero);
     color: var(--hero);
     transition: 1s;
+}
+.car{
+    margin-top: 20vh;
+    width: 140vh;
+    margin-left: -40vh;
+}
+.intro{
+    margin-top: 14vh;
+    margin-left: 4vh;
+    font-weight: bold;
+}
+.text{
+    margin-left: 4vh;
+    font-family: Nunito;
 }
