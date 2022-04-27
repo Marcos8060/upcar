@@ -1,9 +1,8 @@
 import React from 'react'
 import './css/info.css'
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
-import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
+import LaptopChromebookIcon from '@material-ui/icons/LaptopChromebook';
 import SearchIcon from '@material-ui/icons/Search';
+import CreditCardIcon from '@material-ui/icons/CreditCard';
 import car from '../images/car1.jpg'
 import phone from '../images/phone.png'
 
@@ -27,12 +26,12 @@ function Info() {
                             <p className='desc'>Select your car, choose your location, time and pick it up</p>
                         </div>
                         <div className="item">
-                            <SearchIcon />
+                            <LaptopChromebookIcon />
                             <span className='direction'>Define your booking</span>
                             <p className='desc'>Fill your information into the form and go to next step</p>
                         </div>
                         <div className="item">
-                            <SearchIcon />
+                            <CreditCardIcon />
                             <span className='direction'>Payment</span>
                             <p className='desc'>Select your payment, click ok and It’s all done for you</p>
                         </div>
