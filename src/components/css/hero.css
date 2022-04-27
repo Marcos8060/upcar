@@ -1,0 +1,39 @@
+.app__hero{
+    font-family: poppins;
+}
+.brand{
+    font-weight: bolder;
+    color: var(--hero);
+}
+.right{
+    background: var(--hero);
+    height: 100vh;
+}
+.left{
+    background: var(--white);
+    height: 100vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+.btn:nth-child(1){
+    background-color: transparent;
+    border: 2px solid var(--hero);
+    font-weight: bold;
+    color: var(--hero);
+}
+.btn:nth-child(1):hover{
+    background: var(--hero);
+    color: var(--white);
+    transition: 1s;
+}
+.btn:last-child{
+    background-color: var(--hero);
+    color: var(--white);
+    font-weight: bold;
+}
+.btn:last-child:hover{
+    background: var(--white);
+    border: 2px solid var(--hero);
+    color: var(--hero);
+    transition: 1s;
+}

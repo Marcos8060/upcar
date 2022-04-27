@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito+Sans:wght@600&family=Nunito:wght@600&family=Poppins:wght@200;400;500;600;700&display=swap');
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+:root{
+  --hero: #EE5B2B;
+  --unique: #F35A41;
+  --white: #FFFFFF;
 }
