@@ -1,6 +1,18 @@
 .app__footer{
-    background-color: var(--secondary);
-    height: 80px;
+    background-color: var(--white);
+    height: 20vh;
     font-family: poppins;
     padding-top: 4vh;
+    color: var(--nav);
+}
+.brand{
+    font-weight: bold;
+    color: var(--nav);
+    margin-top: 2vh;
+}
+.copyright{
+    margin-top: 4vh;
+}
+.love{
+    margin-top: 4vh;
 }
