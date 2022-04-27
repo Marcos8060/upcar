@@ -27,3 +27,13 @@ span{
     color: var(--unique);
     margin-bottom: 3vh;
 }
+.lower{
+    margin-top: 14vh;
+}
+.car1{
+    border-radius: 30% 70% 70% 30% / 30% 42% 58% 70% ;
+}
+.cto{
+    font-size: 40px;
+    font-weight: 200;
+}

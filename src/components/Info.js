@@ -3,6 +3,7 @@ import './css/info.css'
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ConfirmationNumberIcon from '@material-ui/icons/ConfirmationNumber';
+import car from '../images/car1.jpg'
 
 function Info() {
   return (
@@ -34,6 +35,17 @@ function Info() {
                     </div>
                 </div>
             </div>
+          </div>
+          <div className="container">
+              <div className="row lower">
+                  <div className="col-md-6">
+                      <img className='img-fluid car1' src={car} alt="" />
+                  </div>
+                  <div className="col-md-6 text-center">
+                      <p className='cto'>Quality cars with <br /> affordable prices</p>
+                      <p>Our company was built by trust and reputation. We know how to make our customers love us by our high quality products with affordable prices. We promise to make you have the interesting experiences.</p>
+                  </div>
+              </div>
           </div>
       </div>
     </>
