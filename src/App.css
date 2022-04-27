@@ -12,3 +12,6 @@
   --secondary: #EEF5FB;
   --works: #879DB2;
 }
+.app__navbar{
+  margin-bottom: 10vh;
+}
