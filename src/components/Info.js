@@ -14,20 +14,28 @@ function Info() {
       <div className="app__info">
           <div className="upper__info">
             <div className="container">
+                 <p className='text-center works'>How it works</p>
+                 <p className='happen text-center'>MAKE IT HAPPEN IN 3 STEPS</p>
                 <div className="row">
                     <div className="col-md-7 text-center">
                       <img className='img-fluid' src={phone} alt="" />
                     </div>
                     <div className="col-md-5">
-                        <SearchIcon />
-                        <span>Select your car</span>
-                        <p>Select your car, choose your location, time and pick it up</p>
-                        <SearchIcon />
-                        <span>Select your car</span>
-                        <p>Select your car, choose your location, time and pick it up</p>
-                        <SearchIcon />
-                        <span>Select your car</span>
-                        <p>Select your car, choose your location, time and pick it up</p>
+                        <div className="item">
+                            <SearchIcon />
+                            <span className='direction'>Select your car</span>
+                            <p className='desc'>Select your car, choose your location, time and pick it up</p>
+                        </div>
+                        <div className="item">
+                            <SearchIcon />
+                            <span className='direction'>Define your booking</span>
+                            <p className='desc'>Fill your information into the form and go to next step</p>
+                        </div>
+                        <div className="item">
+                            <SearchIcon />
+                            <span className='direction'>Payment</span>
+                            <p className='desc'>Select your payment, click ok and It’s all done for you</p>
+                        </div>
                     </div>
                 </div>
             </div>

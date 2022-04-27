@@ -11,8 +11,13 @@ span{
     color: var(--unique);
 }
 .works{
-    color: var(--unique);
-    text-transform: uppercase;
+    color: var(--nav);
+    font-size: 40px;
+}
+.happen{
+    margin-bottom: 7vh;
+    text-align: center;
+    color: var(--card);
 }
 .title{
     font-weight: bold;
@@ -32,6 +37,17 @@ span{
 }
 .MuiSvgIcon-root{
     background-color: var(--white);
+    padding: 20px !important;
+    border-radius: 999px;
+    height: 70px !important;
+    width: 70px !important;
+    color: var(--nav);
+    margin-right: 10px;
+}
+.MuiSvgIcon-root:hover{
+    background: var(--card);
+    color: var(--white);
+    transition: 1.4s;
 }
 .lower{
     margin-top: 14vh;
@@ -42,4 +58,18 @@ span{
 .cto{
     font-size: 40px;
     font-weight: 200;
+}
+.item{
+    margin-top: 10vh;
+    margin-top: 10vh;
+}
+.desc{
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-family: Nunito;
+    color: var(--works);
+}
+.direction{
+    color: var(--nav);
 }
