@@ -1,0 +1,7 @@
+.app__choose{
+    font-family: poppins;
+    margin-bottom: 10vh;
+}
+.MuiSvgIcon-root{
+    color: var(--card);
+}
