@@ -1,0 +1,37 @@
+.app__featured{
+    background: var(--secondary);
+    padding-top: 7vh;
+    padding-bottom: 10vh;
+    margin-bottom: 7vh;
+}
+.feature_title{
+    font-size: 40px;
+    font-weight: 100;
+    font-family: poppins;
+    margin-bottom: 7vh;
+}
+.feature__item{
+    background-color: var(--white);
+    border-radius: 4px;
+    padding: 20px;
+    font-family: poppins;
+    margin-bottom: 4vh;
+}
+.price{
+    color: var(--card);
+    font-weight: bold;
+}
+.btn1{
+    width: 100%;
+    border: none;
+    background-color: var(--secondary);
+    border-radius: 4px;
+    color: var(--nav);
+    padding: 4px;
+    text-transform: uppercase;
+}
+.btn1:hover{
+    background: var(--card);
+    color: var(--white);
+    transition: 1.4s;
+}
