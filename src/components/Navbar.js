@@ -45,8 +45,8 @@ function Navbar() {
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Action
+                      <a className="dropdown-item" href="/detail">
+                        Details
                       </a>
                     </li>
                     <li>
