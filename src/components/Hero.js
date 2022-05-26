@@ -7,7 +7,6 @@ function Hero() {
   return (
     <>
       <div className="app__hero">
-        <Navbar />
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-4">

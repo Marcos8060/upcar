@@ -77,3 +77,6 @@ th{
     color: white;
     font-family: Nunito;
 }
+.visitCartBtn:hover{
+    color: white;
+}

@@ -8,12 +8,12 @@ import CreditCardIcon from "@material-ui/icons/CreditCard";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ClearIcon from "@material-ui/icons/Clear";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { Link } from 'react-router-dom'
 
 function Detail() {
   return (
     <>
       <div className="app__detail">
-        <Navbar />
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
             <p className="name">Lambogini Gallardo</p>
@@ -93,7 +93,7 @@ function Detail() {
                           <span>$ 800</span>
                         </div>
                         <hr />
-                        <button className="visitCartBtn">View Cart</button>
+                        <Link to='/cart' className="visitCartBtn btn">View Cart</Link>
                       </ul>
                     </li>
                   </ul>
