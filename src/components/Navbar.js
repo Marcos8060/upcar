@@ -1,10 +1,32 @@
-import React from 'react'
+import React,{useState,useRef,useEffect} from 'react'
 
 function Navbar() {
+  const [navBackground, setNavBackground] = useState(false);
+
+  const navRef = useRef();
+  navRef.current = navBackground;
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 40;
+      if (navRef.current !== show) {
+        setNavBackground(show);
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className="app__navbar">
-      <nav className="navbar navbar-expand-lg">
+      <nav className="navbar navbar-expand-lg fixed-top"
+      style={{
+        transition: "1s ease",
+        backgroundColor: navBackground ? "#EEF5FB" : "transparent",
+      }} 
+      >
           <div className="container">
             <a className="navbar-brand" href="/">
               ZolaCar
