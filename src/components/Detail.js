@@ -1,5 +1,4 @@
-import React from "react";
-import Navbar from "./Navbar";
+import React,{useState,useEffect} from "react";
 import car from "../images/car1.jpg";
 import "./css/detail.css";
 import Footer from "./Footer";
@@ -9,17 +8,32 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ClearIcon from "@material-ui/icons/Clear";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from 'react-router-dom'
+import { useParams } from "react-router-dom";
+import axios from "axios";
+
+
 
 function Detail() {
+  const { id } = useParams();
+  const [item,setItem] = useState([])
+  const url = `http://127.0.0.1:8000/api/featured/${id}/`
+
+  useEffect(() =>{
+    axios.get(url)
+    .then((res) =>{
+      setItem(res.data)
+    })
+  },[])
+
   return (
     <>
       <div className="app__detail">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
-            <p className="name">Lambogini Gallardo</p>
-            <p className="price">$29.00</p>
+            <p className="name">{item.name}</p>
+            <p className="price">$ {item.price}</p>
           </div>
-          <img className="img-fluid car__detail" src={car} alt="" />
+          <img className="img-fluid car__detail" src={item.image} alt="" />
           <div className="car__information mt-4">
             {/* <h6 className="info__title">Car Information</h6> */}
 
@@ -116,11 +130,11 @@ function Detail() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="text-muted">7</td>
-                      <td className="text-muted">4</td>
-                      <td className="text-muted">7</td>
-                      <td className="text-muted">Automatic</td>
-                      <td className="text-muted">Diesel</td>
+                      <td className="text-muted">{item.luggage}</td>
+                      <td className="text-muted">{item.doors}</td>
+                      <td className="text-muted">{item.passengers}</td>
+                      <td className="text-muted">{item.transmission}</td>
+                      <td className="text-muted">{item.gas}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -129,13 +143,13 @@ function Detail() {
                 <p className="mt-4 mb-4 gallery__title">Image Gallery</p>
                 <div className="row">
                   <div className="col-md-4">
-                    <img className="img-fluid mt-3 mb-3" src={car} alt="" />
+                    <img className="img-fluid mt-3 mb-3" src={item.interior1} alt="" />
                   </div>
                   <div className="col-md-4">
-                    <img className="img-fluid mt-3 mb-3" src={car} alt="" />
+                    <img className="img-fluid mt-3 mb-3" src={item.interior2} alt="" />
                   </div>
                   <div className="col-md-4">
-                    <img className="img-fluid mt-3 mb-3" src={car} alt="" />
+                    <img className="img-fluid mt-3 mb-3" src={item.interior3} alt="" />
                   </div>
                 </div>
                 <div className="row choose">

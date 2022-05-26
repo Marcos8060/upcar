@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import './css/feature.css'
-import car from '../images/car1.jpg'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
 const url = 'http://127.0.0.1:8000/api/featured/'
@@ -12,7 +12,6 @@ function Featured() {
         axios.get(url)
         .then((res) =>{
           setItems(res.data)
-          console.log(res.data);
         })
     },[])
   return (
@@ -36,7 +35,7 @@ function Featured() {
                                  <p>Maximum passengers: {item.passengers}</p>
                              </div>
                          </div>
-                         <button className='btn1 mt-2'>View Detail</button>
+                         <Link to={`detail/${item.id}`} className='btn btn1 mt-2'>View Detail</Link>
                       </div>
                   </div>
                   ))}
