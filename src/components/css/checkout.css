@@ -1,0 +1,20 @@
+.app__checkout{
+    font-family: Nunito;
+}
+.submitBtn{
+    background: var(--card);
+    border: none;
+    color: white;
+    width: 80%;
+}
+.submitBtn:hover{
+    color: white;
+}
+.form-control{
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form-control:focus{
+    box-shadow: none;
+}
