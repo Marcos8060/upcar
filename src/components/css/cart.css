@@ -1,0 +1,24 @@
+.app__cart{
+    font-family: Nunito;
+}
+.CartImg{
+    width: 200px;
+}
+.card{
+    padding: 20px;
+}
+.deleteIcon{
+    color: black;
+    cursor: pointer;
+}
+.deleteIcon:hover{
+    background: transparent !important;
+    color: black !important;
+}
+.continueBtn{
+    background: var(--card);
+    color: var(--white);
+}
+.continueBtn:hover{
+    color: var(--white);
+}
