@@ -12,9 +12,6 @@
   --secondary: #EEF5FB;
   --works: #879DB2;
 }
-.app__navbar{
-  margin-bottom: 10vh;
-}
 .navbar-brand{
   font-family: poppins;
 }
@@ -34,4 +31,7 @@
 }
 .navbar-toggler:focus{
   box-shadow: none;
+}
+.app__navbar{
+  margin-bottom: 17vh;
 }
