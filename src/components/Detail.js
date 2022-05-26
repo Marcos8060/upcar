@@ -103,6 +103,7 @@ function Detail() {
             {/* End of navbar */}
             <div className="row">
               <div className="col-md-8">
+                <div className="table-responsive">
                 <table class="table table-bordered">
                   <thead>
                     <tr>
@@ -123,6 +124,7 @@ function Detail() {
                     </tr>
                   </tbody>
                 </table>
+                </div>
                 <hr />
                 <p className="mt-4 mb-4 gallery__title">Image Gallery</p>
                 <div className="row">
