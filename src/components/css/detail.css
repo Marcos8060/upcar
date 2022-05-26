@@ -48,3 +48,13 @@ th{
     margin-top: 10vh;
     margin-bottom: 14vh;
 }
+.cartIcon{
+    color: var(--card) !important;
+    background: transparent !important;
+    margin:  0 !important;
+}
+.count{
+    font-weight: bolder;
+    font-size: 24px;
+    color: var(--card);
+}
