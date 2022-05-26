@@ -1,83 +1,45 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import './css/feature.css'
 import car from '../images/car1.jpg'
+import axios from 'axios'
 
 
+const url = 'http://127.0.0.1:8000/api/featured/'
 function Featured() {
+    const [items,setItems] = useState([])
+
+    useEffect(() =>{
+        axios.get(url)
+        .then((res) =>{
+          setItems(res.data)
+          console.log(res.data);
+        })
+    },[])
   return (
     <>
       <div className="app__featured">
           <div className="container">
               <p className='text-center feature_title'>Featured Cars</p>
               <div className="row">
-                  <div className="col-md-6">
+                  {items.map((item) =>(
+                      <div className="col-md-6" key={item.id}>
                       <div className="feature__item">
-                         <h6>Ferrari SP38</h6> 
-                         <p className='price'>$23.90 </p>  
+                         <h6>{item.name}</h6> 
+                         <p className='price'>$ {item.price}/day </p>  
                          <div className="row">
                              <div className='col-md-6 text-center'>
-                               <img className='img-fluid' src={car} alt="" />
+                               <img className='img-fluid' src={item.image} alt="" />
                              </div>
                              <div className='col-md-6'>
-                                 <p>Pieces of luggage: 4</p>
-                                 <p>Doors: 4</p>
-                                 <p>Maximum passengers: 7</p>
+                                 <p>Pieces of luggage: {item.luggage}</p>
+                                 <p>Doors: {item.doors}</p>
+                                 <p>Maximum passengers: {item.passengers}</p>
                              </div>
                          </div>
                          <button className='btn1 mt-2'>View Detail</button>
                       </div>
                   </div>
-                  <div className="col-md-6">
-                      <div className="feature__item">
-                         <h6>Ferrari SP38</h6> 
-                         <p className='price'>$23.90 </p>  
-                         <div className="row">
-                             <div className='col-md-6 text-center'>
-                               <img className='img-fluid' src={car} alt="" />
-                             </div>
-                             <div className='col-md-6'>
-                                 <p>Pieces of luggage: 4</p>
-                                 <p>Doors: 4</p>
-                                 <p>Maximum passengers: 7</p>
-                             </div>
-                         </div>
-                         <button className='btn1 mt-2'>View Detail</button>
-                      </div>
-                  </div>
-                  <div className="col-md-6">
-                      <div className="feature__item">
-                         <h6>Ferrari SP38</h6> 
-                         <p className='price'>$23.90 </p>  
-                         <div className="row">
-                             <div className='col-md-6 text-center'>
-                               <img className='img-fluid' src={car} alt="" />
-                             </div>
-                             <div className='col-md-6'>
-                                 <p>Pieces of luggage: 4</p>
-                                 <p>Doors: 4</p>
-                                 <p>Maximum passengers: 7</p>
-                             </div>
-                         </div>
-                         <button className='btn1 mt-2'>View Detail</button>
-                      </div>
-                  </div>
-                  <div className="col-md-6">
-                      <div className="feature__item">
-                         <h6>Ferrari SP38</h6> 
-                         <p className='price'>$23.90 </p>  
-                         <div className="row">
-                             <div className='col-md-6 text-center'>
-                               <img className='img-fluid' src={car} alt="" />
-                             </div>
-                             <div className='col-md-6'>
-                                 <p>Pieces of luggage: 4</p>
-                                 <p>Doors: 4</p>
-                                 <p>Maximum passengers: 7</p>
-                             </div>
-                         </div>
-                         <button className='btn1 mt-2'>View Detail</button>
-                      </div>
-                  </div>
+                  ))}
               </div>
           </div>
       </div>
