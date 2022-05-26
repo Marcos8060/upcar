@@ -1,9 +1,9 @@
 import React from "react";
 import "./css/checkout.css";
 import car from "../images/car1.jpg";
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import AssignmentReturnIcon from '@material-ui/icons/AssignmentReturn';
+import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
+import LocalShippingIcon from "@material-ui/icons/LocalShipping";
+import AssignmentReturnIcon from "@material-ui/icons/AssignmentReturn";
 
 function Checkout() {
   return (
@@ -149,17 +149,23 @@ function Checkout() {
               </div>
               <hr />
               <div className="d-flex align-items-center">
-                  <VerifiedUserIcon className='cartIcons' />
-                  <span className="text-muted">Security Policy(edit with customer assurance module)</span>
-                  </div>
-                  <div className="d-flex align-items-center">
-                  <LocalShippingIcon className='cartIcons' />
-                  <span className="text-muted">Delivery Policy Policy(edit with customer assurance module)</span>
-                  </div>
-                  <div className="d-flex align-items-center">
-                  <AssignmentReturnIcon className='cartIcons' />
-                  <span className="text-muted">Delivery Policy Policy(edit with customer assurance module)</span>
-                  </div>
+                <VerifiedUserIcon className="cartIcons" />
+                <span className="text-muted">
+                  Security Policy(edit with customer assurance module)
+                </span>
+              </div>
+              <div className="d-flex align-items-center">
+                <LocalShippingIcon className="cartIcons" />
+                <span className="text-muted">
+                  Delivery Policy Policy(edit with customer assurance module)
+                </span>
+              </div>
+              <div className="d-flex align-items-center">
+                <AssignmentReturnIcon className="cartIcons" />
+                <span className="text-muted">
+                  Delivery Policy Policy(edit with customer assurance module)
+                </span>
+              </div>
             </div>
           </div>
         </div>
