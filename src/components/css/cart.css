@@ -18,7 +18,14 @@
 .continueBtn{
     background: var(--card);
     color: var(--white);
+    text-transform: uppercase;
 }
 .continueBtn:hover{
     color: var(--white);
+}
+.cartIcons{
+    color: gray !important;
+}
+.cartIcons:hover{
+    background-color: transparent;
 }
