@@ -86,6 +86,13 @@ function Detail() {
                           <input type="date" className="form-control mb-3" />
                           <label htmlFor="Pickup" className="form-label text-muted">DROP OFF</label>
                           <input type="date" className="form-control mb-4" />
+                          <select className="form-select form-select-sm mb-4" aria-label=".form-select-sm example">
+                            <option selected>Select Quantity</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="3">4</option>
+                          </select>
                           <div className="d-flex justify-content-between align-items-center">
                               <p className="text-muted">Price per day:</p>
                               <p className="text-muted">$30</p>
@@ -102,7 +109,7 @@ function Detail() {
                               <p>RENT TOTAL:</p>
                               <p className="price">$30</p>
                           </div>
-                          <button className="btn2">Proceed to book</button>
+                          <button className="btn2">Add to cart</button>
                       </form>
                   </div>
               </div>
