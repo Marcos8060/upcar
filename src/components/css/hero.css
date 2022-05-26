@@ -2,9 +2,6 @@
     font-family: poppins;
     margin-bottom: 14vh;
 }
-/* .navbar{
-    margin-bottom: 4vh;
-} */
 .navbar-brand{
     font-weight: bolder;
     color: var(--nav);
