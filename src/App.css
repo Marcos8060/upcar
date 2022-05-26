@@ -15,3 +15,12 @@
 .app__navbar{
   margin-bottom: 10vh;
 }
+.navbar-brand{
+  font-family: poppins;
+}
+.nav-link{
+  font-family: poppins;
+}
+.account{
+  width: 200px !important;
+}

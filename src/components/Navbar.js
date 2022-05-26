@@ -6,7 +6,7 @@ function Navbar() {
       <div className="app__navbar">
       <nav className="navbar navbar-expand-lg">
           <div className="container">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               ZolaCar
             </a>
             <button
@@ -22,59 +22,11 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Home
-                  </a>
-                </li>
+                
                 <li className="nav-item">
                   <a className="nav-link" href="#">
-                    Link
+                    Visit Our Fleet
                   </a>
-                </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Pages
-                  </a>
-                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li>
-                      <a className="dropdown-item" href="/detail">
-                        Details
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Another action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Something else here
-                      </a>
-                    </li>
-                  </ul>
                 </li>
               </ul>
               <ul className="navbar-nav right ms-auto mb-2 mb-lg-0">
@@ -89,7 +41,7 @@ function Navbar() {
                   >
                     My Account
                   </a>
-                  <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <ul className="dropdown-menu account" aria-labelledby="navbarDropdown">
                     <li>
                       <a className="dropdown-item" href="#">
                         SignIn
