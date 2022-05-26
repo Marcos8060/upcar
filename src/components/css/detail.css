@@ -58,3 +58,22 @@ th{
     font-size: 24px;
     color: var(--card);
 }
+.dropdown-menu{
+    width: 300px;
+    padding: 10px;
+    font-family: Nunito;
+}
+.cartImg{
+    width: 100px;
+}
+.cartPrice{
+    color: var(--card);
+    font-weight: bold;
+}
+.visitCartBtn{
+    width: 100%;
+    border: none;
+    background: var(--card);
+    color: white;
+    font-family: Nunito;
+}

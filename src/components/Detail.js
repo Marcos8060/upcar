@@ -58,21 +58,42 @@ function Detail() {
                         class="dropdown-menu"
                         aria-labelledby="navbarDropdownMenuLink"
                       >
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Action
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Another action
-                          </a>
-                        </li>
-                        <li>
-                          <a class="dropdown-item" href="#">
-                            Something else here
-                          </a>
-                        </li>
+                        <div className="d-flex justify-content-between">
+                          <div>
+                           <img className="img-fluid cartImg" src={car} alt="" />
+                          </div>
+                          <div>
+                          <small className="fw-bold">Lamborgini Gallardo</small><br />
+                          <span className="cartPrice">$ 400</span>
+                          </div>
+                        </div>
+                        <hr />
+                        <div className="d-flex justify-content-between">
+                          <div>
+                           <img className="img-fluid cartImg" src={car} alt="" />
+                          </div>
+                          <div>
+                          <small className="fw-bold">Lamborgini Gallardo</small><br />
+                          <span className="cartPrice">$ 400</span>
+                          </div>
+                        </div>
+                        <hr />
+                        <div className="d-flex justify-content-between">
+                          <div>
+                           <img className="img-fluid cartImg" src={car} alt="" />
+                          </div>
+                          <div>
+                          <small>Lamborgini Gallardo</small><br />
+                          <span className="cartPrice">$ 400</span>
+                          </div>
+                        </div>
+                        <hr />
+                        <div className="d-flex justify-content-around align-items-center">
+                          <span>Total</span>
+                          <span>$ 800</span>
+                        </div>
+                        <hr />
+                        <button className="visitCartBtn">View Cart</button>
                       </ul>
                     </li>
                   </ul>
