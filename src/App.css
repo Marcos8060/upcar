@@ -24,3 +24,14 @@
 .account{
   width: 200px !important;
 }
+.menu{
+  color: var(--black) !important;
+  background: transparent !important;
+}
+.menu:hover{
+  background-color: transparent !important;
+  color: var(--black);
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+}

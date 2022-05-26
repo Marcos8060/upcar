@@ -1,4 +1,6 @@
 import React,{useState,useRef,useEffect} from 'react'
+import MenuIcon from "@material-ui/icons/Menu";
+
 
 function Navbar() {
   const [navBackground, setNavBackground] = useState(false);
@@ -40,7 +42,7 @@ function Navbar() {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <MenuIcon className='menu'/>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
