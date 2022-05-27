@@ -1,0 +1,35 @@
+.app__fleet{
+    font-family: Nunito;
+}
+.footer{
+    background: white;
+    box-shadow: 0px 1px 14px 1px lightgray;
+    padding: 10px;
+}
+.viewBtn{
+    background: var(--secondary);
+    color: #5E768D;
+    width: 100%;
+    text-transform: uppercase;
+}
+.viewBtn:hover{
+    background: var(--card);
+    color: white;
+    transition: .8s;
+}
+.fleetIcon{
+    color: #879DB2 !important;
+    margin: 0;
+    font-size: 70px !important;
+}
+.fleetIcon:hover{
+    background: transparent !important;
+    color: #879DB2 !important;
+}
+.fleetImg{
+    height: 200px;
+    width: 100%;
+}
+.gray{
+    color: #879DB2;
+}
