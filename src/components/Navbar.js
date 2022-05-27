@@ -1,5 +1,6 @@
 import React,{useState,useRef,useEffect} from 'react'
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from 'react-router-dom'
 
 
 function Navbar() {
@@ -48,9 +49,9 @@ function Navbar() {
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
+                  <Link to='/fleet' className="nav-link">
                     Visit Our Fleet
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <ul className="navbar-nav right ms-auto mb-2 mb-lg-0">

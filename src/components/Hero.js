@@ -14,7 +14,7 @@ function Hero() {
                 Now it's easy for you to rent a car
               </h2>
               <p className="text">We have patnered with the world’s leading manufacture’s and brands to create a cross border experience without having to sacrifice the comfort of city rides.</p>
-              <Link to='/' className="btn book1 mb-4">Start Booking</Link>
+              <Link to='/fleet' className="btn book1 mb-4">Start Booking</Link>
             </div>
             <div className="col-md-8">
               <img className="img-fluid car1" src={car} alt="" />

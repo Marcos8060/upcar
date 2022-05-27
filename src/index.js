@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Cart from './components/Cart';
 import Navbar from './components/Navbar';
 import Checkout from './components/Checkout';
+import Fleet from './components/Fleet';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +20,7 @@ root.render(
             <Route exact path='/detail/:id/' element={ < Detail />}></Route>
             <Route exact path='/cart' element={< Cart />}></Route>
             <Route exact path='/checkout' element={< Checkout />}></Route>
-            {/* <Route exact path='/logout' element={< Logout />}></Route> */}
+            <Route exact path='/fleet' element={< Fleet />}></Route>
             {/* <Route exact path='/profiles/:id' element={< Profile />}></Route> */}
             {/* <Route exact path='/search' element={< Search />}></Route> */}
             {/* <Route exact path='/admin/profiles' element={< Admin />}></Route> */}
