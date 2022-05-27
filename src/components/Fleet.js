@@ -31,7 +31,7 @@ function Fleet() {
                           <p className='gray'>Pieces of luggage: {car.luggage}</p>
                           <p className='gray'>Doors: {car.doors}</p>
                           <p className='gray'>Maximum passengers: {car.passengers}</p>
-                          <Link to='/detail' className='btn viewBtn'>View Detail</Link>
+                          <Link to={`detail/${car.id}`} className='btn viewBtn'>View Detail</Link>
                         </div>
                     </div>
                 </div>
