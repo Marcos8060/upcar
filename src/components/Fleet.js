@@ -11,6 +11,45 @@ function Fleet() {
     <div className='app__fleet'>
         <div className="container">
             <div className="row">
+                <div className="col-md-4" style={{ marginBottom: '7vh'}}>
+                    <div>
+                        <img className='img-fluid fleetImg' src={car} alt="" />
+                        <div className="footer">
+                          <p>Ferrari</p>
+                          <p className='price'>$ 23/day</p>
+                          <p className='gray'>Pieces of luggage: 4</p>
+                          <p className='gray'>Doors: 3</p>
+                          <p className='gray'>Maximum passengers: 4</p>
+                          <Link to='/detail' className='btn viewBtn'>View Detail</Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    <div>
+                        <img className='img-fluid fleetImg' src={car} alt="" />
+                        <div className="footer">
+                          <p>Ferrari</p>
+                          <p className='price'>$ 23/day</p>
+                          <p className='gray'>Pieces of luggage: 4</p>
+                          <p className='gray'>Doors: 3</p>
+                          <p className='gray'>Maximum passengers: 4</p>
+                          <Link to='/detail' className='btn viewBtn'>View Detail</Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    <div>
+                        <img className='img-fluid fleetImg' src={car} alt="" />
+                        <div className="footer">
+                          <p>Ferrari</p>
+                          <p className='price'>$ 23/day</p>
+                          <p className='gray'>Pieces of luggage: 4</p>
+                          <p className='gray'>Doors: 3</p>
+                          <p className='gray'>Maximum passengers: 4</p>
+                          <Link to='/detail' className='btn viewBtn'>View Detail</Link>
+                        </div>
+                    </div>
+                </div>
                 <div className="col-md-4">
                     <div>
                         <img className='img-fluid fleetImg' src={car} alt="" />
