@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import SearchBar from "material-ui-search-bar";
 import { useNavigate } from 'react-router-dom'
+import Navbar from './Navbar';
 
 
 const url = 'http://127.0.0.1:8000/api/cars/'
@@ -30,6 +31,7 @@ function Fleet() {
   };
   return (
     <div className='app__fleet'>
+       <Navbar />
         <div className="container">
         <SearchBar
               style={{
