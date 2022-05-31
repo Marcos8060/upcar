@@ -140,16 +140,16 @@ function Detail() {
                 </table>
                 </div>
                 <hr />
-                <p className="mt-4 mb-4 gallery__title">Image Gallery</p>
+                <p className="mt-4 mb-4 gallery__title">Interior Images</p>
                 <div className="row">
                   <div className="col-md-4">
-                    <img className="img-fluid mt-3 mb-3" src={item.interior1} alt="" />
+                    <img className="img-fluid interior mt-3 mb-3" src={item.interior1} alt="" />
                   </div>
                   <div className="col-md-4">
-                    <img className="img-fluid mt-3 mb-3" src={item.interior2} alt="" />
+                    <img className="img-fluid interior mt-3 mb-3" src={item.interior2} alt="" />
                   </div>
                   <div className="col-md-4">
-                    <img className="img-fluid mt-3 mb-3" src={item.interior3} alt="" />
+                    <img className="img-fluid interior mt-3 mb-3" src={item.interior3} alt="" />
                   </div>
                 </div>
                 <div className="row choose">
