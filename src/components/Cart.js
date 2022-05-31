@@ -1,5 +1,4 @@
-import React from "react";
-import car from "../images/car1.jpg";
+import React,{useState,useEffect} from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import "./css/cart.css";
 import { Link } from "react-router-dom";
@@ -13,6 +12,13 @@ function Cart() {
     state: { cart },
     dispatch
   } = GlobalContext();
+  const [total, setTotal] = useState();
+
+  useEffect(() => {
+    setTotal(
+      cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+    );
+  }, [cart]);
 
   if(cart.length == 0){
     return(
@@ -85,7 +91,7 @@ function Cart() {
               <div className="card">
                 <div className="d-flex justify-content-between align-items-center">
                   <p>{cart.length} Items</p>
-                  <p>$ 799</p>
+                  <p>$ {total}</p>
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
                   <p>Shipping</p>
