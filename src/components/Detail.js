@@ -290,7 +290,7 @@ function Detail() {
                       payload: item,
                     });
                   }}
-                  className="btn2"
+                  className="btn3"
                 >
                   Remove from cart
                 </button>

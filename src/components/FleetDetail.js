@@ -9,10 +9,10 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from 'react-router-dom'
 import { useParams } from "react-router-dom";
 import axios from 'axios';
-import car from "../images/car1.jpg";
-
+import { GlobalContext } from '../context';
 
 function FleetDetail() {
+    const {state:{cart},dispatch} = GlobalContext();
     const [item,setItem] = useState([])
     const { id } = useParams();
     const url = `http://127.0.0.1:8000/api/cars/${id}/`
@@ -35,9 +35,50 @@ function FleetDetail() {
           <img className="img-fluid car__detail" src={item.image} alt="" />
           <div className="car__information mt-4">
             {/* <h6 className="info__title">Car Information</h6> */}
+            <div className="d-flex align-items-center top">
+            <h6 className="info__title">Car Information</h6>
+            <div class="dropdown">
+              <a
+                className="btn dropdown-toggle viewCartBtn"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                View Cart({cart.length})
+              </a>
 
-            {/* navbar */}
-            <nav class="navbar navbar-expand-lg">
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                {cart.map((car) => (
+                  <>
+                    <div className="d-flex justify-content-between">
+                      <div>
+                        <img
+                          className="img-fluid cartImg"
+                          src={car.image}
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <small className="fw-bold">{car.name}</small>
+                        <br />
+                        <span className="cartPrice">$ {car.price}</span>
+                      </div>
+                    </div>
+                    <hr />
+                  </>
+                ))}
+                <div className="d-flex justify-content-between align-items-center">
+                    <span>Total</span>
+                    <span>$ 800</span>
+                </div>
+                <hr />
+                <Link to="/cart" className="visitCartBtn btn">Go to Cart</Link>
+              </ul>
+            </div>
+          </div>
+            {/* <nav class="navbar navbar-expand-lg">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                   Car Information
@@ -112,7 +153,7 @@ function FleetDetail() {
                   </ul>
                 </div>
               </div>
-            </nav>
+            </nav> */}
             {/* End of navbar */}
             <div className="row">
               <div className="col-md-8">
@@ -185,7 +226,32 @@ function FleetDetail() {
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="book__card">
+              {cart.some((p) => p.id === item.id) ? (
+                <button
+                  onClick={() => {
+                    dispatch({
+                      type: "REMOVE",
+                      payload: item,
+                    });
+                  }}
+                  className="btn3"
+                >
+                  Remove from cart
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    dispatch({
+                      type: "ADD_TO_CART",
+                      payload: item,
+                    });
+                  }}
+                  className="btn2"
+                >
+                  Add to cart
+                </button>
+              )}
+                <div className="book__card mt-4">
                   <form>
                     <label htmlFor="Pickup" className="form-label text-muted">
                       PICK UP
@@ -195,7 +261,7 @@ function FleetDetail() {
                       DROP OFF
                     </label>
                     <input type="date" className="form-control mb-4" />
-                    <select
+                    {/* <select
                       className="form-select form-select-sm mb-4"
                       aria-label=".form-select-sm example"
                     >
@@ -204,7 +270,7 @@ function FleetDetail() {
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="3">4</option>
-                    </select>
+                    </select> */}
                     <div className="d-flex justify-content-between align-items-center">
                       <p className="text-muted">Price per day:</p>
                       <p className="text-muted">$30</p>
@@ -221,7 +287,7 @@ function FleetDetail() {
                       <p>RENT TOTAL:</p>
                       <p className="price">$30</p>
                     </div>
-                    <button className="btn2">Add to cart</button>
+                    <button className="btn2">Submit</button>
                   </form>
                 </div>
               </div>

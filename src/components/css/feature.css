@@ -23,9 +23,9 @@
 .btn1{
     width: 100%;
     border: none;
-    background-color: var(--secondary);
+    background-color: var(--card);
     border-radius: 4px;
-    color: var(--nav);
+    color: white;
     padding: 4px;
     text-transform: uppercase;
 }
