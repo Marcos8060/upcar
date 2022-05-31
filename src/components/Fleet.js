@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from 'react'
 import './css/fleet.css'
-import car from '../images/car1.jpg'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import SearchBar from "material-ui-search-bar";
