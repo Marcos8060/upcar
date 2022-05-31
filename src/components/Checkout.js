@@ -1,11 +1,20 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./css/checkout.css";
-import car from "../images/car1.jpg";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import AssignmentReturnIcon from "@material-ui/icons/AssignmentReturn";
+import { GlobalContext } from "../context";
 
 function Checkout() {
+  const { state:{cart}} = GlobalContext();
+  const [total, setTotal] = useState();
+
+  useEffect(() => {
+    setTotal(
+      cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+    );
+  }, [cart]);
+
   return (
     <div className="app__checkout">
       <div className="container">
@@ -53,95 +62,48 @@ function Checkout() {
           </div>
           <div className="col-md-5 mb-4">
             <div className="card">
-              <p className="items">2 items</p>
-              <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#"></a>
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav me-auto">
-                      <li class="nav-item dropdown">
-                        <a
-                          class="nav-link dropdown-toggle"
-                          href="#"
-                          id="navbarDropdownMenuLink"
-                          role="button"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
-                          SHOW DETAILS
-                        </a>
-                        <ul
-                          class="dropdown-menu"
-                          aria-labelledby="navbarDropdownMenuLink"
-                        >
-                          <div className="d-flex justify-content-between">
-                            <div>
-                              <img
-                                className="img-fluid cartImg"
-                                src={car}
-                                alt=""
-                              />
-                            </div>
-                            <div>
-                              <small className="fw-bold">
-                                Lamborgini Gallardo
-                              </small>
-                              <br />
-                              <span className="cartPrice">$ 400</span>
-                            </div>
-                          </div>
-                          <hr />
-                          <div className="d-flex justify-content-between">
-                            <div>
-                              <img
-                                className="img-fluid cartImg"
-                                src={car}
-                                alt=""
-                              />
-                            </div>
-                            <div>
-                              <small className="fw-bold">
-                                Lamborgini Gallardo
-                              </small>
-                              <br />
-                              <span className="cartPrice">$ 400</span>
-                            </div>
-                          </div>
-                          <hr />
-                          <div className="d-flex justify-content-between">
-                            <div>
-                              <img
-                                className="img-fluid cartImg"
-                                src={car}
-                                alt=""
-                              />
-                            </div>
-                            <div>
-                              <small>Lamborgini Gallardo</small>
-                              <br />
-                              <span className="cartPrice">$ 400</span>
-                            </div>
-                          </div>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
+              <p className="items">{cart.length} items</p>
+              <div class="dropdown">
+              <a
+                className="btn dropdown-toggle viewCartBtn"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                SHOW DETAILS
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                {cart.map((car) => (
+                  <>
+                    <div className="d-flex justify-content-between">
+                      <div>
+                        <img
+                          className="img-fluid cartImg"
+                          src={car.image}
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <small className="fw-bold">{car.name}</small>
+                        <br />
+                        <span className="cartPrice">$ {car.price}</span>
+                      </div>
+                    </div>
+                    <hr />
+                  </>
+                ))}
+                <div className="d-flex justify-content-between align-items-center mt-4">
+                    <span>Total</span>
+                    <span>$ {total}</span>
                 </div>
-              </nav>
+              </ul>
+            </div>
               <div className="d-flex justify-content-between align-items-center">
                 <p>Sub Total</p>
-                <p>$ 39.00</p>
+                <p>$ {total}</p>
               </div>
               <div className="d-flex justify-content-between align-items-center">
                 <p>Shipping</p>
