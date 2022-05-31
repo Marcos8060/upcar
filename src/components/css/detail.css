@@ -99,12 +99,11 @@ th{
     margin-bottom: 4vh;
 }
 .top > h6{
-    margin-right: 10vh;
+    margin-right: 4vh;
 }
 .viewCartBtn{
     background: var(--card);
     color: white;
-    margin-left: 4vh;
 }
 .viewCartBtn:hover{
     color: white;

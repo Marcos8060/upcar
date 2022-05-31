@@ -82,20 +82,6 @@ function FleetDetail() {
                   </Link>
                 </ul>
               </div>
-              <div class="dropdown">
-                <button
-                  className="btn dropdown-toggle viewCartBtn"
-                  type="button"
-                  id="dropdownMenu2"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Drop a comment
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <Comment />
-                </ul>
-              </div>
             </div>
             {/* <nav class="navbar navbar-expand-lg">
               <div class="container-fluid">
