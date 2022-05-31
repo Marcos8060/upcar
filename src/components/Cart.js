@@ -29,7 +29,7 @@ function Cart() {
                 <div className="row d-flex align-items-center">
                   {cart.map((car) => (
                     <>
-                      <div className="col-md-3 text-center">
+                      <div className="col-md-3 text-center" key={car.id}>
                         <img className="img-fluid CartImg" src={car.image} alt="" />
                       </div>
                       <div className="col-md-3 text-center">
@@ -42,7 +42,25 @@ function Cart() {
                         <span>Drop Off: 2022 04 24</span>
                       </div>
                       <div className="col-md-3 text-center">
-                        <span>$ ${car.price}</span>
+                      <select
+                            onChange={(e) =>
+                              dispatch({
+                                type: "CHANGE_CART_QTY",
+                                payload: {
+                                  id: car.id,
+                                  qty: e.target.value,
+                                },
+                              })
+                            }
+                            className="form-select"
+                            aria-label=".form-select-sm example"
+                          >
+                            <option selected>Quantity</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
                       </div>
                       <div className="col-md-3 text-center">
                         <DeleteIcon 
@@ -66,7 +84,7 @@ function Cart() {
             <div className="col-md-4">
               <div className="card">
                 <div className="d-flex justify-content-between align-items-center">
-                  <p>2 Items</p>
+                  <p>{cart.length} Items</p>
                   <p>$ 799</p>
                 </div>
                 <div className="d-flex justify-content-between align-items-center">
