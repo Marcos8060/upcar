@@ -37,3 +37,7 @@
     height: 34px;
     border-radius: 4px;
 }
+.registerTitle{
+    color: var(--black);
+    text-align: center;
+}
