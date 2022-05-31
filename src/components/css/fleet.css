@@ -33,3 +33,13 @@
 .gray{
     color: #879DB2;
 }
+.MuiSvgIcon-root{
+    background: transparent !important;
+}
+.MuiSvgIcon-root:hover{
+    background: transparent !important;
+    color: var(--card);
+}
+.fleets{
+    margin-top: 7vh;
+}

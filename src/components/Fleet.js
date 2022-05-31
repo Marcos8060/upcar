@@ -2,14 +2,17 @@ import React,{useState,useEffect} from 'react'
 import './css/fleet.css'
 import car from '../images/car1.jpg'
 import { Link } from 'react-router-dom'
-import LocalTaxiIcon from '@material-ui/icons/LocalTaxi';
-import DriveEtaIcon from '@material-ui/icons/DriveEta';
-import AirlineSeatReclineNormalIcon from '@material-ui/icons/AirlineSeatReclineNormal';
 import axios from 'axios'
+import SearchBar from "material-ui-search-bar";
+import { useNavigate } from 'react-router-dom'
+
 
 const url = 'http://127.0.0.1:8000/api/cars/'
 function Fleet() {
+    const history = useNavigate();
     const [cars,setCars] = useState([])
+    const [data, setData] = useState({ search: "" });
+
 
     useEffect(() =>{
         axios.get(url)
@@ -17,10 +20,31 @@ function Fleet() {
             setCars(res.data)
         })
     },[])
+
+     // search function
+  const goSearch = (e) => {
+    history({
+      pathname: "/search/",
+      search: "?search=" + data.search,
+    });
+    window.location.reload();
+  };
   return (
     <div className='app__fleet'>
         <div className="container">
-            <div className="row">
+        <SearchBar
+              style={{
+                margin: "0 auto",
+                maxWidth: 700,
+                borderRadius: 30,
+                boxShadow: "0px 1px 8px 1px lightgray",
+              }}
+              placeholder="Search by brand..."
+              value={data.search}
+              onChange={(newValue) => setData({ search: newValue })}
+              onRequestSearch={() => goSearch(data.search)}
+            />
+            <div className="row fleets">
                 {cars.map((car) =>(
                     <div className="col-md-4" style={{ marginBottom: '7vh'}} key={car.id}>
                     <div>

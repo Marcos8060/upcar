@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Checkout from './components/Checkout';
 import Fleet from './components/Fleet';
 import FleetDetail from './components/FleetDetail';
+import Search from './components/Search';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,7 +25,7 @@ root.render(
             <Route exact path='/checkout' element={< Checkout />}></Route>
             <Route exact path='/fleet' element={< Fleet />}></Route>
             {/* <Route exact path='/profiles/:id' element={< Profile />}></Route> */}
-            {/* <Route exact path='/search' element={< Search />}></Route> */}
+            <Route exact path='/search' element={< Search />}></Route>
             {/* <Route exact path='/admin/profiles' element={< Admin />}></Route> */}
             {/* <Route exact path='/edit/:id' element={< Edit />}></Route> */}
         </Routes>
