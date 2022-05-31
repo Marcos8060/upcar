@@ -10,8 +10,9 @@ const reducer =(state,action) =>{
                 ...state,
                 cart: state.cart.filter((x) => x.id !== action.payload.id)
             }
+    default:
+        return state
     }
-    return state
 }
 
 export default reducer
