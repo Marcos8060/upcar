@@ -1,15 +1,14 @@
-import React from "react";
-import "./css/register.css";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Register() {
+function Login() {
   return (
-    <div className="app__register">
-      <div className="container">
+    <div className='app__register'>
+          <div className="container">
         <div className="row registerContainer">
           <div className="col-md-5">
             <div className="card">
-              <h4 className="registerTitle">Sign Up</h4>
+              <h4 className="registerTitle">Login</h4>
               <form>
                 <label htmlFor="username" className="form-label">
                   Username
@@ -20,15 +19,6 @@ function Register() {
                   placeholder="username..."
                   required
                 />
-                <label htmlFor="email" className="form-label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  placeholder="email..."
-                  required
-                />
                 <label htmlFor="password" className="form-label">
                   Password
                 </label>
@@ -37,7 +27,7 @@ function Register() {
                   className="form-control"
                   placeholder="password..."
                 />
-                <Link to="/login">Already have an account?</Link>
+                <Link to="/register">Don't have an account?</Link>
                 <button className="registerBtn mt-4">Submit</button>
               </form>
             </div>
@@ -45,7 +35,7 @@ function Register() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Register;
+export default Login

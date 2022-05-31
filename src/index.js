@@ -12,6 +12,7 @@ import FleetDetail from "./components/FleetDetail";
 import Search from "./components/Search";
 import AppProvider from "./context";
 import Register from "./components/Register";
+import Login from "./components/Login";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,7 +32,7 @@ root.render(
           <Route exact path="/fleet" element={<Fleet />}></Route>
           <Route exact path='/register' element={< Register />}></Route>
           <Route exact path="/search" element={<Search />}></Route>
-          {/* <Route exact path='/admin/profiles' element={< Admin />}></Route> */}
+          <Route exact path='/login' element={< Login />}></Route>
           {/* <Route exact path='/edit/:id' element={< Edit />}></Route> */}
         </Routes>
       </React.StrictMode>
