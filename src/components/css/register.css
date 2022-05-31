@@ -20,3 +20,20 @@
     opacity: 0.4;
     z-index: -1;
   }
+.registerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20vh;
+}
+.form-label{
+    color: var(--black);
+}
+.registerBtn{
+    background: var(--card);
+    border: none;
+    width: 100%;
+    color: white;
+    height: 34px;
+    border-radius: 4px;
+}
