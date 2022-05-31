@@ -11,7 +11,14 @@ import { GlobalContext } from "../context";
 function Cart() {
   const {
     state: { cart },
+    dispatch
   } = GlobalContext();
+
+  if(cart.length == 0){
+    return(
+      <h3 className="text-center empty">Your Cart is empty</h3>
+    )
+  }
   return (
     <>
       <div className="app__cart">
@@ -38,7 +45,14 @@ function Cart() {
                         <span>$ ${car.price}</span>
                       </div>
                       <div className="col-md-3 text-center">
-                        <DeleteIcon className="deleteIcon" />
+                        <DeleteIcon 
+                        onClick={() => {
+                          dispatch({
+                            type: "REMOVE",
+                            payload: car,
+                          });
+                        }}
+                        className="deleteIcon" />
                       </div>
                       <hr />
                     </>

@@ -29,3 +29,7 @@
 .cartIcons:hover{
     background-color: transparent;
 }
+.empty{
+    margin-top: 30vh;
+    font-family: Nunito;
+}
