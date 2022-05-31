@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 import "./css/detail.css";
 import Footer from "./Footer";
 import GradeIcon from "@material-ui/icons/Grade";
@@ -6,27 +6,30 @@ import CreditCardIcon from "@material-ui/icons/CreditCard";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ClearIcon from "@material-ui/icons/Clear";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import axios from 'axios';
-import { GlobalContext } from '../context';
+import axios from "axios";
+import { GlobalContext } from "../context";
+import Comment from "./Comment";
 
 function FleetDetail() {
-    const {state:{cart},dispatch} = GlobalContext();
-    const [item,setItem] = useState([])
-    const { id } = useParams();
-    const url = `http://127.0.0.1:8000/api/cars/${id}/`
-    
-    useEffect(() =>{
-        axios.get(url)
-        .then((res) =>{
-          setItem(res.data)
-        })
-      },[])
+  const {
+    state: { cart },
+    dispatch,
+  } = GlobalContext();
+  const [item, setItem] = useState([]);
+  const { id } = useParams();
+  const url = `http://127.0.0.1:8000/api/cars/${id}/`;
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setItem(res.data);
+    });
+  }, []);
 
   return (
     <>
-    <div className="app__detail">
+      <div className="app__detail">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
             <p className="name">{item.name}</p>
@@ -36,48 +39,64 @@ function FleetDetail() {
           <div className="car__information mt-4">
             {/* <h6 className="info__title">Car Information</h6> */}
             <div className="d-flex align-items-center top">
-            <h6 className="info__title">Car Information</h6>
-            <div class="dropdown">
-              <a
-                className="btn dropdown-toggle viewCartBtn"
-                href="#"
-                role="button"
-                id="dropdownMenuLink"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                View Cart({cart.length})
-              </a>
+              <h6 className="info__title">Car Information</h6>
+              <div class="dropdown">
+                <a
+                  className="btn dropdown-toggle viewCartBtn"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  View Cart({cart.length})
+                </a>
 
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                {cart.map((car) => (
-                  <>
-                    <div className="d-flex justify-content-between">
-                      <div>
-                        <img
-                          className="img-fluid cartImg"
-                          src={car.image}
-                          alt=""
-                        />
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  {cart.map((car) => (
+                    <>
+                      <div className="d-flex justify-content-between">
+                        <div>
+                          <img
+                            className="img-fluid cartImg"
+                            src={car.image}
+                            alt=""
+                          />
+                        </div>
+                        <div>
+                          <small className="fw-bold">{car.name}</small>
+                          <br />
+                          <span className="cartPrice">$ {car.price}</span>
+                        </div>
                       </div>
-                      <div>
-                        <small className="fw-bold">{car.name}</small>
-                        <br />
-                        <span className="cartPrice">$ {car.price}</span>
-                      </div>
-                    </div>
-                    <hr />
-                  </>
-                ))}
-                <div className="d-flex justify-content-between align-items-center">
+                      <hr />
+                    </>
+                  ))}
+                  <div className="d-flex justify-content-between align-items-center">
                     <span>Total</span>
                     <span>$ 800</span>
-                </div>
-                <hr />
-                <Link to="/cart" className="visitCartBtn btn">Go to Cart</Link>
-              </ul>
+                  </div>
+                  <hr />
+                  <Link to="/cart" className="visitCartBtn btn">
+                    Go to Cart
+                  </Link>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button
+                  className="btn dropdown-toggle viewCartBtn"
+                  type="button"
+                  id="dropdownMenu2"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Drop a comment
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <Comment />
+                </ul>
+              </div>
             </div>
-          </div>
             {/* <nav class="navbar navbar-expand-lg">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -158,38 +177,50 @@ function FleetDetail() {
             <div className="row">
               <div className="col-md-8">
                 <div className="table-responsive">
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th scope="col">Pieces of luggage</th>
-                      <th scope="col">Doors</th>
-                      <th scope="col">Passengers</th>
-                      <th scope="col">Transmission</th>
-                      <th scope="col">Gas vehicle</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="text-muted">{item.luggage}</td>
-                      <td className="text-muted">{item.doors}</td>
-                      <td className="text-muted">{item.passengers}</td>
-                      <td className="text-muted">{item.transmission}</td>
-                      <td className="text-muted">{item.gas}</td>
-                    </tr>
-                  </tbody>
-                </table>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Pieces of luggage</th>
+                        <th scope="col">Doors</th>
+                        <th scope="col">Passengers</th>
+                        <th scope="col">Transmission</th>
+                        <th scope="col">Gas vehicle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td className="text-muted">{item.luggage}</td>
+                        <td className="text-muted">{item.doors}</td>
+                        <td className="text-muted">{item.passengers}</td>
+                        <td className="text-muted">{item.transmission}</td>
+                        <td className="text-muted">{item.gas}</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
                 <hr />
                 <p className="mt-4 mb-4 gallery__title">Image Gallery</p>
                 <div className="row">
                   <div className="col-md-4">
-                    <img className="img-fluid interior mt-3 mb-3" src={item.interior1} alt="" />
+                    <img
+                      className="img-fluid interior mt-3 mb-3"
+                      src={item.interior1}
+                      alt=""
+                    />
                   </div>
                   <div className="col-md-4">
-                    <img className="img-fluid interior mt-3 mb-3" src={item.interior2} alt="" />
+                    <img
+                      className="img-fluid interior mt-3 mb-3"
+                      src={item.interior2}
+                      alt=""
+                    />
                   </div>
                   <div className="col-md-4">
-                    <img className="img-fluid interior mt-3 mb-3" src={item.interior3} alt="" />
+                    <img
+                      className="img-fluid interior mt-3 mb-3"
+                      src={item.interior3}
+                      alt=""
+                    />
                   </div>
                 </div>
                 <div className="row choose">
@@ -226,31 +257,31 @@ function FleetDetail() {
                 </div>
               </div>
               <div className="col-md-4">
-              {cart.some((p) => p.id === item.id) ? (
-                <button
-                  onClick={() => {
-                    dispatch({
-                      type: "REMOVE",
-                      payload: item,
-                    });
-                  }}
-                  className="btn3"
-                >
-                  Remove from cart
-                </button>
-              ) : (
-                <button
-                  onClick={() => {
-                    dispatch({
-                      type: "ADD_TO_CART",
-                      payload: item,
-                    });
-                  }}
-                  className="btn2"
-                >
-                  Add to cart
-                </button>
-              )}
+                {cart.some((p) => p.id === item.id) ? (
+                  <button
+                    onClick={() => {
+                      dispatch({
+                        type: "REMOVE",
+                        payload: item,
+                      });
+                    }}
+                    className="btn3"
+                  >
+                    Remove from cart
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      dispatch({
+                        type: "ADD_TO_CART",
+                        payload: item,
+                      });
+                    }}
+                    className="btn2"
+                  >
+                    Add to cart
+                  </button>
+                )}
                 <div className="book__card mt-4">
                   <form>
                     <label htmlFor="Pickup" className="form-label text-muted">
@@ -297,7 +328,7 @@ function FleetDetail() {
       </div>
       <Footer />
     </>
-  )
+  );
 }
 
-export default FleetDetail
+export default FleetDetail;

@@ -104,6 +104,7 @@ th{
 .viewCartBtn{
     background: var(--card);
     color: white;
+    margin-left: 4vh;
 }
 .viewCartBtn:hover{
     color: white;
