@@ -13,6 +13,7 @@ import Search from "./components/Search";
 import AppProvider from "./context";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import Logout from "./components/Logout";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
