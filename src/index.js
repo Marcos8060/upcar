@@ -33,7 +33,7 @@ root.render(
           <Route exact path='/register' element={< Register />}></Route>
           <Route exact path="/search" element={<Search />}></Route>
           <Route exact path='/login' element={< Login />}></Route>
-          {/* <Route exact path='/edit/:id' element={< Edit />}></Route> */}
+          <Route exact path='/logout' element={< Logout />}></Route>
         </Routes>
       </React.StrictMode>
     </Router>
