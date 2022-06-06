@@ -2,40 +2,42 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import axiosInstance from '../axios';
+import { GlobalContext } from '../context';
 
 function Login() {
-  const history = useNavigate();
-  const initialFormData = Object.freeze({
-    email : '',
-    password : '',
-  })
+  const { loginUser } = GlobalContext();
+  // const history = useNavigate();
+  // const initialFormData = Object.freeze({
+  //   email : '',
+  //   password : '',
+  // })
 
-  const [formData,updateFormData] = useState(initialFormData)
+  // const [formData,updateFormData] = useState(initialFormData)
 
-  const handleChange = (e) =>{
-    updateFormData({
-      ...formData,
-      [e.target.name] : e.target.value.trim(),
-    })
-  }
+  // const handleChange = (e) =>{
+  //   updateFormData({
+  //     ...formData,
+  //     [e.target.name] : e.target.value.trim(),
+  //   })
+  // }
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    console.log(formData);
+  // const handleSubmit = (e) =>{
+  //   e.preventDefault()
+  //   console.log(formData);
 
-    axiosInstance.post('token/',{
-      email : formData.email,
-      password : formData.password
-    })
-    .then((res) =>{
-      localStorage.setItem('access_token', res.data.access);
-      localStorage.setItem('refresh_token', res.data.refresh);
-      axiosInstance.defaults.headers['Authorization'] = 
-      'JWT ' + localStorage.getItem('access_token')
-      history('/')
-    });
+  //   axiosInstance.post('token/',{
+  //     email : formData.email,
+  //     password : formData.password
+  //   })
+  //   .then((res) =>{
+  //     localStorage.setItem('access_token', res.data.access);
+  //     localStorage.setItem('refresh_token', res.data.refresh);
+  //     axiosInstance.defaults.headers['Authorization'] = 
+  //     'JWT ' + localStorage.getItem('access_token')
+  //     history('/')
+  //   });
 
-  }
+  // }
 
   return (
     <div className='app__register'>
@@ -44,31 +46,33 @@ function Login() {
           <div className="col-md-5">
             <div className="card">
               <h4 className="registerTitle">Login</h4>
-              <form>
+
+              <form onSubmit={loginUser}>
                 <label htmlFor="username" className="form-label">
-                  Email
+                  Username
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
                   placeholder="username..."
-                  name='email'
+                  name='username'
                   required
-                  onChange={handleChange}
+                  // onChange={handleChange}
                 />
                 <label htmlFor="password" className="form-label">
                   Password
                 </label>
                 <input
-                  type="password"
+                  type="text"
                   className="form-control"
                   placeholder="password..."
                   name='password'
-                  onChange={handleChange}
+                  // onChange={handleChange}
                 />
                 <Link to="/register">Don't have an account?</Link>
-                <button onClick={handleSubmit} className="registerBtn mt-4">Submit</button>
+                <button className="registerBtn mt-4">Submit</button>
               </form>
+
             </div>
           </div>
         </div>

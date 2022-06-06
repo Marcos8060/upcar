@@ -1,9 +1,11 @@
 import React,{useState,useRef,useEffect} from 'react'
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from 'react-router-dom'
+import { GlobalContext } from '../context';
 
 
 function Navbar() {
+  const { user } = GlobalContext();
   const [navBackground, setNavBackground] = useState(false);
 
   const navRef = useRef();
@@ -54,6 +56,7 @@ function Navbar() {
                   </Link>
                 </li>
               </ul>
+              { user && <p>Hello {user.username}</p>}
               <ul className="navbar-nav right ms-auto mb-2 mb-lg-0">
                 <li className="nav-item dropdown">
                   <a
