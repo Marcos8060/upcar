@@ -78,8 +78,8 @@ function Navbar() {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Checkout
+                      <a className="dropdown-item" href="/logout">
+                        Logout
                       </a>
                     </li>
                   </ul>
