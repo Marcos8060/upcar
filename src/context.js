@@ -37,7 +37,7 @@ function AppProvider({ children }){
         }
 
     }
-    console.log(user);
+    console.log(user.username);
     return(
         <CarContext.Provider value={{
             state,
