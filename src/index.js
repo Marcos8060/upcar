@@ -5,7 +5,6 @@ import App from "./App";
 import Detail from "./components/Detail";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart";
-import Navbar from "./components/Navbar";
 import Checkout from "./components/Checkout";
 import Fleet from "./components/Fleet";
 import FleetDetail from "./components/FleetDetail";

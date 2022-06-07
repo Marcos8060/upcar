@@ -1,7 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 import './css/search.css'
-import Navbar from './Navbar'
 
 function Search() {
     const search = 'search'
@@ -20,7 +19,6 @@ function Search() {
     },[setAppState])
   return (
       <>
-      <Navbar />
       <div className='container app__search'>
         <h2 className='text-center mb-4'>Welcome to your Search Results</h2>
         <div className="underline"></div>
