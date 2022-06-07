@@ -12,14 +12,25 @@ function Fleet() {
     const history = useNavigate();
     const [cars,setCars] = useState([])
     const [data, setData] = useState({ search: "" });
+    const [loading,setLoading] = useState(false)
 
 
     useEffect(() =>{
+      setLoading(true)
         axios.get(url)
         .then((res) =>{
             setCars(res.data)
+            setLoading(false)
         })
     },[])
+
+    if(loading){
+      return(
+        <div>
+          <h3 className='text-center loading'>Loading...</h3>
+        </div>
+      )
+    }
 
      // search function
   const goSearch = (e) => {
