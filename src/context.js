@@ -37,12 +37,21 @@ function AppProvider({ children }){
         }
 
     }
-    console.log(user.username);
+
+    let logoutUser = ()=>{
+        setAuthTokens(null)
+        setUser(null)
+        localStorage.removeItem('authTokens')
+        history('/login')
+    }
+
+
     return(
         <CarContext.Provider value={{
             state,
             dispatch,
             loginUser,
+            logoutUser,
             user
         }}>
             { children }

@@ -5,7 +5,7 @@ import { GlobalContext } from '../context';
 
 
 function Navbar() {
-  const { user } = GlobalContext();
+  const { user, logoutUser } = GlobalContext();
   const [navBackground, setNavBackground] = useState(false);
 
   const navRef = useRef();
@@ -81,7 +81,7 @@ function Navbar() {
                       </a>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="/logout">
+                      <a onClick={logoutUser} className="dropdown-item" href="/logout">
                         Logout
                       </a>
                     </li>
