@@ -1,81 +1,91 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import { SidebarData } from "./SidebarData";
-import SubMenu from "./SubMenu";
-import { IconContext } from "react-icons/lib";
-import MenuIcon from '@material-ui/icons/Menu';
+import React,{useState,useRef,useEffect} from 'react'
+import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from 'react-router-dom'
+import { GlobalContext } from '../context';
+import { RiLogoutBoxLine } from 'react-icons/ri'
+import { GrLogout } from 'react-icons/gr'
 
-const Nav = styled.div`
-background: white;
-height: 80px;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-`;
 
-const NavIcon = styled(Link)`
-margin-left: 2rem;
-font-size: 2rem;
-height: 80px;
-display: flex;
-justify-content: flex-start;
-align-items: center;
-`;
+function Navbar() {
+  const { user, logoutUser } = GlobalContext();
+  const [navBackground, setNavBackground] = useState(false);
 
-const SidebarNav = styled.nav`
-background: #3D5974;
-color: #3D5974;
-width: 250px;
-height: 100vh;
-display: flex;
-justify-content: center;
-position: fixed;
-top: 0;
-left: ${({ sidebar }) => (sidebar ? "0" : "-100%")};
-transition: 350ms;
-z-index: 10;
-`;
+  const navRef = useRef();
+  navRef.current = navBackground;
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 40;
+      if (navRef.current !== show) {
+        setNavBackground(show);
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-const SidebarWrap = styled.div`
-width: 100%;
-`;
+  return (
+    <>
+      <div className="app__navbar">
+      <nav className="navbar navbar-expand-lg fixed-top"
+      style={{
+        transition: "1s ease",
+        backgroundColor: navBackground ? "#EEF5FB" : "transparent",
+      }} 
+      >
+          <div className="container">
+            <a className="navbar-brand" href="/">
+              ZolaCar
+            </a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <MenuIcon className='menu'/>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                <li className="nav-item">
+                  <Link to='/fleet' className="nav-link">
+                    Visit Our Fleet
+                  </Link>
+                </li>
+              </ul>
+              <ul className="navbar-nav right ms-auto mb-2 mb-lg-0">
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    My Account
+                  </a>
+                  <ul className="dropdown-menu account" aria-labelledby="navbarDropdown">
+                    <li>
+                        {user && <p className='dropdown-item'>Hey {user.username}</p>}
+                    </li>
+                    <li>
+                        { user ? <p className="dropdown-item" onClick={logoutUser}>Logout</p> : <Link to='/login'>Login</Link>}
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </>
+  )
+}
 
-const Navbar = () => {
-const [sidebar, setSidebar] = useState(false);
-
-const showSidebar = () => setSidebar(!sidebar);
-
-return (
-	<>
-	<IconContext.Provider value={{ color: "#fff" }}>
-		<Nav>
-		<NavIcon to="#">
-            <MenuIcon onClick={showSidebar} />
-		</NavIcon>
-		{/* <h1
-			style={{ textAlign: "center",
-					marginLeft: "100px",
-					color: "black" }}
-		>
-		   Zolacar
-		</h1> */}
-		</Nav>
-		<SidebarNav sidebar={sidebar}>
-		<SidebarWrap>
-			<NavIcon to="#">
-			<AiIcons.AiOutlineClose onClick={showSidebar} />
-			</NavIcon>
-			{SidebarData.map((item, index) => {
-			return <SubMenu item={item} key={index} />;
-			})}
-		</SidebarWrap>
-		</SidebarNav>
-	</IconContext.Provider>
-	</>
-);
-};
-
-export default Navbar;
+export default Navbar
