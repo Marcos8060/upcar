@@ -35,13 +35,11 @@ function FleetDetail() {
       const information = {pickup,dropoff}
       setData((data) =>{
         return(
-          [...data, information],
-          info[data]
+          [...data, information]
         ) 
       })
     }
   }
-  console.log(info)
   
 
   return (
