@@ -21,6 +21,7 @@ root.render(
     <React.StrictMode>
       <AppProvider>
         <Routes>
+          <Route exact path="/" element={<App />}></Route>
           <Route element={<PrivateRoutes />}>
            <Route exact path="/detail/:id/" element={<Detail />}></Route>
           <Route exact path="/fleet/detail/:id/" element={<FleetDetail />}></Route>
@@ -29,7 +30,6 @@ root.render(
           <Route exact path="/fleet" element={<Fleet />}></Route>
           <Route exact path="/search" element={<Search />}></Route>
           </Route>
-          <Route exact path="/" element={<App />}></Route>
           <Route exact path="/register" element={<Register />}></Route>
           <Route exact path="/login" element={<Login />}></Route>
           <Route exact path="/logout" element={<Logout />}></Route>

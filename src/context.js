@@ -8,13 +8,15 @@ const CarContext = createContext();
 
 function AppProvider({ children }){
     const history = useNavigate();
-    let [ authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')):(null))
-    let [ user, setUser] = useState(localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')):(null))
+    let [ authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')):(null))
+    let [ user, setUser] = useState(()=> localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')):(null))
     let [loading,setLoading] = useState(true)
 
     const [state,dispatch] = useReducer(reducer,{
-        cart: []
+        cart: [],
+        info: []
     })
+
 
     let loginUser = async(e) =>{
         e.preventDefault()
@@ -22,8 +24,6 @@ function AppProvider({ children }){
             method: 'POST',
             headers:{
                 'Content-Type' : 'application/json',
-                 accept: 'application/json',
-
             },
             body: JSON.stringify({ 'username':e.target.username.value, 'password': e.target.password.value})
         })
@@ -85,15 +85,17 @@ function AppProvider({ children }){
         return () => clearInterval(interval)
     },[authTokens, loading])
 
+    let contextData = {
+        authTokens: authTokens,
+        user: user,
+        state: state,
+        loginUser: loginUser,
+        logoutUser: logoutUser,
+        dispatch: dispatch
+    }
 
     return(
-        <CarContext.Provider value={{
-            state,
-            dispatch,
-            loginUser,
-            logoutUser,
-            user
-        }}>
+        <CarContext.Provider value={contextData}>
             {loading ? null : children }
         </CarContext.Provider>
     )

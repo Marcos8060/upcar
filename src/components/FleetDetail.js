@@ -5,12 +5,10 @@ import GradeIcon from "@material-ui/icons/Grade";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import ClearIcon from "@material-ui/icons/Clear";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { GlobalContext } from "../context";
-import Comment from "./Comment";
 
 function FleetDetail() {
   const {
@@ -18,6 +16,9 @@ function FleetDetail() {
     dispatch,
   } = GlobalContext();
   const [item, setItem] = useState([]);
+  const [pickup,setPickup] = useState('')
+  const [dropoff,setDropoff] = useState('')
+  const [data,setData] = useState([])
   const { id } = useParams();
   const url = `http://127.0.0.1:8000/api/cars/${id}/`;
 
@@ -26,6 +27,22 @@ function FleetDetail() {
       setItem(res.data);
     });
   }, []);
+
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+
+    if(pickup && dropoff){
+      const information = {pickup,dropoff}
+      setData((data) =>{
+        return(
+          [...data, information],
+          info[data]
+        ) 
+      })
+    }
+  }
+  console.log(info)
+  
 
   return (
     <>
@@ -83,83 +100,6 @@ function FleetDetail() {
                 </ul>
               </div>
             </div>
-            {/* <nav class="navbar navbar-expand-lg">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  Car Information
-                </a>
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNavDropdown"
-                  aria-controls="navbarNavDropdown"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                  <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                      <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="navbarDropdownMenuLink"
-                        role="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        <ShoppingCartIcon className='cartIcon' />
-                        <span className="count">0</span>
-                      </a>
-                      <ul
-                        class="dropdown-menu"
-                        aria-labelledby="navbarDropdownMenuLink"
-                      >
-                        <div className="d-flex justify-content-between">
-                          <div>
-                           <img className="img-fluid cartImg" src={car} alt="" />
-                          </div>
-                          <div>
-                          <small className="fw-bold">Lamborgini Gallardo</small><br />
-                          <span className="cartPrice">$ 400</span>
-                          </div>
-                        </div>
-                        <hr />
-                        <div className="d-flex justify-content-between">
-                          <div>
-                           <img className="img-fluid cartImg" src={car} alt="" />
-                          </div>
-                          <div>
-                          <small className="fw-bold">Lamborgini Gallardo</small><br />
-                          <span className="cartPrice">$ 400</span>
-                          </div>
-                        </div>
-                        <hr />
-                        <div className="d-flex justify-content-between">
-                          <div>
-                           <img className="img-fluid cartImg" src={car} alt="" />
-                          </div>
-                          <div>
-                          <small>Lamborgini Gallardo</small><br />
-                          <span className="cartPrice">$ 400</span>
-                          </div>
-                        </div>
-                        <hr />
-                        <div className="d-flex justify-content-around align-items-center">
-                          <span>Total</span>
-                          <span>$ 800</span>
-                        </div>
-                        <hr />
-                        <Link to='/cart' className="visitCartBtn btn">View Cart</Link>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav> */}
-            {/* End of navbar */}
             <div className="row">
               <div className="col-md-8">
                 <div className="table-responsive">
@@ -227,7 +167,7 @@ function FleetDetail() {
                   </div>
                   <div className="col-md-6">
                     <FavoriteBorderIcon />
-                    <span>Trustedby 10+ clients</span>
+                    <span>Trusted by 10+ clients</span>
                     <p className="desc">
                       We have 10k+ happy clients who love us and ready for our
                       cars
@@ -273,21 +213,17 @@ function FleetDetail() {
                     <label htmlFor="Pickup" className="form-label text-muted">
                       PICK UP
                     </label>
-                    <input type="date" className="form-control mb-3" />
-                    <label htmlFor="Pickup" className="form-label text-muted">
+                    <input 
+                    value={pickup}
+                    onChange={(e)=> setPickup(e.target.value)} 
+                    name="pickup" type="date" className="form-control mb-3" />
+                    <label htmlFor="Dropoff" className="form-label text-muted">
                       DROP OFF
                     </label>
-                    <input type="date" className="form-control mb-4" />
-                    {/* <select
-                      className="form-select form-select-sm mb-4"
-                      aria-label=".form-select-sm example"
-                    >
-                      <option selected>Select Quantity</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="3">4</option>
-                    </select> */}
+                    <input 
+                    value={dropoff}
+                    onChange={(e)=> setDropoff(e.target.value)} 
+                    name="dropoff" type="date" className="form-control mb-4" />
                     <div className="d-flex justify-content-between align-items-center">
                       <p className="text-muted">Price per day:</p>
                       <p className="text-muted">$30</p>
@@ -304,7 +240,7 @@ function FleetDetail() {
                       <p>RENT TOTAL:</p>
                       <p className="price">$30</p>
                     </div>
-                    <button className="btn2">Submit</button>
+                    <button onClick={handleSubmit} className="btn2">Submit</button>
                   </form>
                 </div>
               </div>

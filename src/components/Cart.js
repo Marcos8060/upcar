@@ -6,6 +6,7 @@ import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import AssignmentReturnIcon from "@material-ui/icons/AssignmentReturn";
 import { GlobalContext } from "../context";
+import axios from "axios";
 
 function Cart() {
   const {
@@ -13,12 +14,20 @@ function Cart() {
     dispatch
   } = GlobalContext();
   const [total, setTotal] = useState();
+  const [date,setDate] = useState([])
 
   useEffect(() => {
     setTotal(
       cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
     );
   }, [cart]);
+
+  useEffect(() =>{
+    axios.get('http://127.0.0.1:8000/api/pick/')
+    .then((res) =>{
+      setDate(res.data)
+    })
+  },[])
 
   if(cart.length == 0){
     return(
@@ -43,9 +52,13 @@ function Cart() {
                         <br />
                         <span className="price">$ {car.price}</span>
                         <br />
-                        <span>Pick up: 2022 04 24</span>
-                        <br />
-                        <span>Drop Off: 2022 04 24</span>
+                        {date.map((day) =>(
+                          <>
+                            <span>Pick up: {day.pickup}</span>
+                              <br />
+                            <span>Drop Off: {day.dropoff}</span>
+                          </>
+                        ))}
                       </div>
                       <div className="col-md-3 text-center">
                       <select
