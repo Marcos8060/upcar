@@ -41,6 +41,13 @@
     height: 30px;
     margin: 2px;
 }
-.stepper{
-    background: green !important;
+
+.summary{
+    width: 100%;
+    background: var(--card);
+    color: white;
+    margin-top: 2vh;
+}
+.summary:hover{
+    color: white;
 }

@@ -1,0 +1,13 @@
+.app__summary{
+    font-family: Nunito;
+}
+.summaryImg{
+    border-radius: 10px;
+    width: 100px;
+}
+.leftSummary{
+    border-right: 1px solid lightgray;
+}
+.centerSummary{
+    border-right: 1px solid lightgray;
+}

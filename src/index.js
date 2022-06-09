@@ -15,6 +15,7 @@ import Login from "./components/Login";
 import Logout from "./components/Logout";
 import PrivateRoutes from "./components/PrivateRoute";
 import Navbar from './components/Navbar'
+import Summary from "./components/Summary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,6 +32,7 @@ root.render(
           <Route exact path="/checkout" element={<Checkout />}></Route>
           <Route exact path="/fleet" element={<Fleet />}></Route>
           <Route exact path="/search" element={<Search />}></Route>
+          <Route exact path="/summary" element={<Summary />}></Route>
           </Route>
           <Route exact path="/register" element={<Register />}></Route>
           <Route exact path="/login" element={<Login />}></Route>

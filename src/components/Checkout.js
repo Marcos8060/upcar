@@ -8,6 +8,7 @@ import FirstStep from "./FirstStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
 import { Stepper, StepLabel, Step } from "@material-ui/core";
+import { Link } from 'react-router-dom'
 
 function Checkout() {
   const { currentStep,finalData } = GlobalContext();
@@ -129,6 +130,7 @@ function Checkout() {
                 </span>
               </div>
             </div>
+            <Link to='/summary' className="btn summary">View Order Summary</Link>
           </div>
         </div>
       </div>
