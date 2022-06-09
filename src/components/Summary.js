@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from "react";
 import "./css/summary.css";
 import { GlobalContext } from "../context";
-import { Link } from "react-router-dom";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 
@@ -21,7 +20,7 @@ function Summary() {
           <div className="col-md-3 leftSummary">
             <h3>Dashboard</h3>
             <br />
-            <p>Username : {user.username}</p>
+            <p>Hey,  {user.username} &#128075;</p>
             {finalData.map((data) => (
               <>
                 <p>First Name : {data.firstname}</p>
