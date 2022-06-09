@@ -11,6 +11,9 @@ function AppProvider({ children }){
     let [ authTokens, setAuthTokens] = useState(()=> localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')):(null))
     let [ user, setUser] = useState(()=> localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')):(null))
     let [loading,setLoading] = useState(true)
+    const [currentStep,setCurrentStep] = useState('')
+    const [userData,setUserData] = useState([])
+    const [finalData,setFinalData] = useState([])
 
     const [state,dispatch] = useReducer(reducer,{
         cart: [],
@@ -91,7 +94,13 @@ function AppProvider({ children }){
         state: state,
         loginUser: loginUser,
         logoutUser: logoutUser,
-        dispatch: dispatch
+        dispatch: dispatch,
+        currentStep,
+        setCurrentStep,
+        userData,
+        setUserData,
+        finalData,
+        setFinalData
     }
 
     return(

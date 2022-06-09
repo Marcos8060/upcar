@@ -4,6 +4,9 @@ import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import AssignmentReturnIcon from "@material-ui/icons/AssignmentReturn";
 import { GlobalContext } from "../context";
+import FirstStep from "./FirstStep";
+import SecondStep from "./SecondStep";
+import ThirdStep from "./ThirdStep";
 
 function Checkout() {
   const { state:{cart}} = GlobalContext();
@@ -27,7 +30,10 @@ function Checkout() {
                 (for invoice) and as your delivery address.
               </p>
               <hr />
-              <form>
+              <FirstStep />
+              <SecondStep />
+              <ThirdStep />
+              {/* <form>
                 <label htmlFor="first name" className="form-label">
                   First Name:
                 </label>
@@ -57,7 +63,7 @@ function Checkout() {
                 </label>
                 <input type="text" className="form-control" />
                 <button className="submitBtn btn">Submit</button>
-              </form>
+              </form> */}
             </div>
           </div>
           <div className="col-md-5 mb-4">
