@@ -9,14 +9,27 @@ import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
 
 function Checkout() {
+  const { currentStep } = GlobalContext();
   const { state:{cart}} = GlobalContext();
   const [total, setTotal] = useState();
+
 
   useEffect(() => {
     setTotal(
       cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
     );
   }, [cart]);
+
+  function showStep(step){
+    switch(step){
+      case 1:
+        return <FirstStep />
+      case 2:
+        return <SecondStep />
+      case 3:
+        return <ThirdStep />
+    }
+  }
 
   return (
     <div className="app__checkout">
@@ -30,9 +43,7 @@ function Checkout() {
                 (for invoice) and as your delivery address.
               </p>
               <hr />
-              <FirstStep />
-              <SecondStep />
-              <ThirdStep />
+              {showStep(currentStep)}
               {/* <form>
                 <label htmlFor="first name" className="form-label">
                   First Name:
