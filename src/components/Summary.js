@@ -52,7 +52,7 @@ function Summary() {
                       <div className="col-md-6 text-center">
                         <p>Brand: {car.brand}</p>
                         <p>Price: $ {car.price}</p>
-                        <p>Quantity: {car.quantity}</p>
+                        <p>Quantity: {car.qty}</p>
                       </div>
                     </div>
                   </div>
