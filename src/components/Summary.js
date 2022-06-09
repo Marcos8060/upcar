@@ -2,6 +2,8 @@ import React,{useEffect,useState} from "react";
 import "./css/summary.css";
 import { GlobalContext } from "../context";
 import { Link } from "react-router-dom";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+
 
 function Summary() {
   const { state:{cart}, finalData, user } = GlobalContext();
@@ -35,9 +37,12 @@ function Summary() {
               </>
             ))}
             <hr />
-            <Link to="/payment" className=" btn payment">
+            <PayPalScriptProvider options={{ "client-id": "test" }}>
+                <PayPalButtons style={{ layout: "horizontal" }} />
+             </PayPalScriptProvider>
+            {/* <Link to="/payment" className=" btn payment">
               Proceed to Payment
-            </Link>
+            </Link> */}
           </div>
           <div className="col-md-9 centerSummary">
               {cart.map((car) =>(
