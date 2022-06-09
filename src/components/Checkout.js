@@ -10,7 +10,8 @@ import ThirdStep from "./ThirdStep";
 import { Stepper, StepLabel, Step } from "@material-ui/core";
 
 function Checkout() {
-  const { currentStep } = GlobalContext();
+  const { currentStep,finalData } = GlobalContext();
+  console.log(finalData);
   const {
     state: { cart },
   } = GlobalContext();
