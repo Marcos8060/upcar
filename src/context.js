@@ -15,6 +15,13 @@ function AppProvider({ children }){
     const [userData,setUserData] = useState([])
     const [finalData,setFinalData] = useState([])
 
+
+    const submitData = ()=>{
+        setFinalData(finalData=>[...finalData, userData])
+        setUserData('')
+        setCurrentStep(1)
+    }
+
     const [state,dispatch] = useReducer(reducer,{
         cart: [],
         info: []
@@ -100,7 +107,8 @@ function AppProvider({ children }){
         userData,
         setUserData,
         finalData,
-        setFinalData
+        setFinalData,
+        submitData
     }
 
     return(

@@ -5,7 +5,7 @@ function FirstStep() {
     const { setCurrentStep, userData,setUserData} = GlobalContext();
     
   return (
-    <div>
+    <div className='first'>
         <label htmlFor="firstname" className="form-label">First Name</label>
         <input type="text" className="form-control" placeholder='firstname...' />
         <label htmlFor="lastname" className="form-label">Last Name</label>
