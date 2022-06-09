@@ -29,7 +29,7 @@ function Cart() {
     })
   },[])
 
-  if(cart.length == 0){
+  if(cart.length === 0){
     return(
       <h3 className="text-center empty">Your Cart is empty</h3>
     )
