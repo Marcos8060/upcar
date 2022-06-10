@@ -20,8 +20,8 @@ function Search() {
     },[setAppState])
   return (
       <>
+      <Navbar />
       <div className='container app__search'>
-         <Navbar />
         <h2 className='text-center mb-4'>Welcome to your Search Results</h2>
         <div className="underline"></div>
         <div className="row">

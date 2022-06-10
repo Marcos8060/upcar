@@ -2,6 +2,7 @@ import React,{useEffect,useState} from "react";
 import "./css/summary.css";
 import { GlobalContext } from "../context";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import Navbar from "./Navbar";
 
 
 function Summary() {
@@ -14,6 +15,8 @@ function Summary() {
     );
   }, [cart]);
   return (
+    <>
+    <Navbar />
     <div className="container app__summary">
       <div className="card">
         <div className="row">
@@ -77,6 +80,7 @@ function Summary() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

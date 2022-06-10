@@ -9,6 +9,7 @@ import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
 import { Stepper, StepLabel, Step } from "@material-ui/core";
 import { Link } from 'react-router-dom'
+import Navbar from "./Navbar";
 
 function Checkout() {
   const { currentStep,finalData } = GlobalContext();
@@ -36,7 +37,9 @@ function Checkout() {
   }
 
   return (
-    <div className="app__checkout">
+    <>
+    <Navbar />
+      <div className="app__checkout">
       <div className="container">
         <div className="row">
           <div className="col-md-7 mb-4">
@@ -135,6 +138,8 @@ function Checkout() {
         </div>
       </div>
     </div>
+    </>
+    
   );
 }
 

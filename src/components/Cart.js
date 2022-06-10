@@ -7,6 +7,7 @@ import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import AssignmentReturnIcon from "@material-ui/icons/AssignmentReturn";
 import { GlobalContext } from "../context";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 function Cart() {
   const {
@@ -36,6 +37,7 @@ function Cart() {
   }
   return (
     <>
+    <Navbar />
       <div className="app__cart">
         <div className="container">
           <div className="row">

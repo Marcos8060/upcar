@@ -14,7 +14,6 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import PrivateRoutes from "./components/PrivateRoute";
-import Navbar from './components/Navbar'
 import Summary from "./components/Summary";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -22,7 +21,6 @@ root.render(
   <Router>
     <React.StrictMode>
       <AppProvider>
-        <Navbar />
         <Routes>
           <Route exact path="/" element={<App />}></Route>
           <Route element={<PrivateRoutes />}>

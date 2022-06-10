@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { GlobalContext } from "../context";
+import Navbar from "./Navbar";
 
 function FleetDetail() {
   const {
@@ -44,6 +45,7 @@ function FleetDetail() {
 
   return (
     <>
+    <Navbar />
       <div className="app__detail">
         <div className="container">
           <div className="d-flex justify-content-between align-items-center">
@@ -207,39 +209,10 @@ function FleetDetail() {
                   </button>
                 )}
                 <div className="book__card mt-4">
-                  <form>
-                    <label htmlFor="Pickup" className="form-label text-muted">
-                      PICK UP
-                    </label>
-                    <input 
-                    value={pickup}
-                    onChange={(e)=> setPickup(e.target.value)} 
-                    name="pickup" type="date" className="form-control mb-3" />
-                    <label htmlFor="Dropoff" className="form-label text-muted">
-                      DROP OFF
-                    </label>
-                    <input 
-                    value={dropoff}
-                    onChange={(e)=> setDropoff(e.target.value)} 
-                    name="dropoff" type="date" className="form-control mb-4" />
-                    <div className="d-flex justify-content-between align-items-center">
-                      <p className="text-muted">Price per day:</p>
-                      <p className="text-muted">$30</p>
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <p className="text-muted">Rental price:</p>
-                      <p className="text-muted">$30</p>
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <p className="text-muted">Service:</p>
-                      <p className="text-muted">$0</p>
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <p>RENT TOTAL:</p>
-                      <p className="price">$30</p>
-                    </div>
-                    <button onClick={handleSubmit} className="btn2">Submit</button>
-                  </form>
+                   <h4 className="text-center">Vehicle History</h4>
+                  <p className="text-center">
+                  The year 1886 is regarded as the birth year of the car when German inventor Carl Benz patented his Benz Patent-Motorwagen. Cars became widely available in the early 20th century. One of the first cars accessible to the masses was the 1908 Model T, an American car manufactured by the Ford Motor Company.
+                  </p>
                 </div>
               </div>
             </div>
