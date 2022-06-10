@@ -16,7 +16,8 @@ function SecondStep() {
         onChange={(e)=> setUserData({...userData, 'address': e.target.value})}
         type="text" 
         className="form-control" 
-        placeholder="adress..." />
+        placeholder="adress..."
+        required />
       <label htmlFor="address" className="form-label">
         City
       </label>
@@ -25,7 +26,8 @@ function SecondStep() {
         onChange={(e)=> setUserData({...userData, 'city': e.target.value})}
         type="text" 
         className="form-control" 
-        placeholder="city..." />
+        placeholder="city..."
+        required />
       <label htmlFor="address" className="form-label">
         Postal Code
       </label>
@@ -34,7 +36,8 @@ function SecondStep() {
         onChange={(e)=> setUserData({...userData, 'code': e.target.value})}
         type="text" 
         className="form-control" 
-        placeholder="code..." />
+        placeholder="code..."
+        required />
       <div className="d-flex align-items-center justify-content-center">
         <button onClick={() => setCurrentStep(1)} className="step2Btn">
           <AiOutlineLeft /> Back

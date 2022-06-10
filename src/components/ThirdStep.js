@@ -14,7 +14,8 @@ function ThirdStep() {
         onChange={(e)=> setUserData({...userData, 'pickup': e.target.value})}
         type="date" 
         className="form-control" 
-        placeholder="pickup..." />
+        placeholder="pickup..."
+        required />
       <label htmlFor="address" className="form-label">
         Drop Off
       </label>
@@ -23,7 +24,8 @@ function ThirdStep() {
         onChange={(e)=> setUserData({...userData, 'dropoff': e.target.value})}
         type="date" 
         className="form-control" 
-        placeholder="drop off..." />
+        placeholder="drop off..."
+        required />
       <label htmlFor="address" className="form-label">
         Instructions
       </label>
@@ -36,6 +38,7 @@ function ThirdStep() {
         rows="4"
         className="form-control"
         placeholder="Instructions..."
+        required
       ></textarea>
       <div className="d-flex align-items-center justify-content-center">
         <button onClick={() => setCurrentStep(2)} className="step2Btn">

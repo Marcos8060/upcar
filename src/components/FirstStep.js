@@ -14,7 +14,8 @@ function FirstStep() {
         onChange={(e)=> setUserData({...userData, 'firstname': e.target.value})}
         type="text" 
         className="form-control"
-        placeholder="firstname..." />
+        placeholder="firstname..."
+        required />
       <label htmlFor="lastname" className="form-label">
         Last Name
       </label>
@@ -23,7 +24,8 @@ function FirstStep() {
         onChange={(e)=> setUserData({...userData, 'lastname': e.target.value})}
         type="text" 
         className="form-control" 
-        placeholder="lastname..." />
+        placeholder="lastname..."
+        required />
       <label htmlFor="email" className="form-label">
         Email
       </label>
@@ -32,7 +34,8 @@ function FirstStep() {
         onChange={(e)=> setUserData({...userData, 'email': e.target.value})}
         type="email" 
         className="form-control" 
-        placeholder="email..." />
+        placeholder="email..."
+        required />
       <button onClick={() => setCurrentStep(2)} className="step1Btn">
         Next
       </button>
