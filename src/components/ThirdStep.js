@@ -1,9 +1,13 @@
 import React from "react";
 import { GlobalContext } from "../context";
 import { AiOutlineLeft } from "react-icons/ai";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function ThirdStep() {
-  const { submitData, setCurrentStep, userData,setUserData } = GlobalContext();
+  const { submitData, setCurrentStep, userData,setUserData} = GlobalContext();
+
+
   return (
     <div>
       <label htmlFor="address" className="form-label">

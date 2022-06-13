@@ -2,6 +2,9 @@ import React,{useReducer,createContext, useContext,useState,useEffect} from 'rea
 import reducer from './reducer';
 import jwt_decode from "jwt-decode";
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const CarContext = createContext();
@@ -16,16 +19,19 @@ function AppProvider({ children }){
     const [finalData,setFinalData] = useState([])
 
 
+
     const submitData = ()=>{
         setFinalData(finalData=>[...finalData, userData])
         setUserData('')
         setCurrentStep(1)
+        toast.success("Details saved successfully!");
     }
 
     const [state,dispatch] = useReducer(reducer,{
         cart: [],
         info: []
     })
+
 
 
     let loginUser = async(e) =>{
@@ -108,7 +114,7 @@ function AppProvider({ children }){
         setUserData,
         finalData,
         setFinalData,
-        submitData
+        submitData,
     }
 
     return(
